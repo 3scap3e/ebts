@@ -1,0 +1,16 @@
+[package]
+name = "ebts-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Command line for ebts projects: check, manifest, conflicts, simulate, export"
+
+[[bin]]
+name = "ebts"
+path = "src/main.rs"
+
+[dependencies]
+ebts-core = { path = "../ebts-core" }
+serde.workspace = true
+serde_json.workspace = true
+chrono.workspace = true

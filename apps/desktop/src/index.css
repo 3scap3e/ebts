@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Tanker";
+  src: url("/fonts/tanker.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OCR";
+  src: url("/fonts/ocr.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kalmansk";
+  src: url("/fonts/Kalmansk-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Display";
+  src: url("/fonts/ClashDisplay-Variable.ttf") format("truetype");
+  font-weight: 200 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Clash Grotesk";
+  src: url("/fonts/ClashGrotesk-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Stardom";
+  src: url("/fonts/Stardom-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme inline {
+  --font-display: "Tanker", "Courier New", monospace;
+  --font-tanker: "Tanker", "Courier New", monospace;
+  --font-ocr: "OCR", "Menlo", "Consolas", monospace;
+  --font-kalmansk: "Kalmansk", "Clash Grotesk", Arial, sans-serif;
+  --font-clash: "Clash Display", "Clash Grotesk", Arial, sans-serif;
+  --font-grotesk: "Clash Grotesk", Arial, Helvetica, sans-serif;
+  --font-stardom: "Stardom", "Clash Display", serif;
+  --font-sans: "Clash Grotesk", Arial, Helvetica, sans-serif;
+  --font-mono: "Menlo", "Consolas", monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: #000000;
+  color: #ffffff;
+  font-family: "Clash Grotesk", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  overflow: hidden;
+}
+
+@keyframes slot-working {
+  0%,
+  100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.slot-working {
+  animation: slot-working 1.8s ease-in-out infinite;
+}
+
+@keyframes hotspot-outline {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hotspot-outline {
+  animation: hotspot-outline 0.2s ease-out;
+}
+
+button,
+a,
+[role="button"] {
+  cursor: pointer;
+}
+
+img,
+video {
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #000000;
+  color: #daf822;
+  border: 1px solid rgba(255, 246, 0, 0.5);
+  border-radius: 2px;
+  padding: 8px 32px 8px 12px;
+  font-family: "Tanker", "Courier New", monospace;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  line-height: 1;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23FFF600' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px 14px;
+  color-scheme: dark;
+}
+
+select:focus {
+  outline: none;
+  border-color: #daf822;
+}
+
+select option {
+  background: #000000;
+  color: #ffffff;
+  text-transform: none;
+  letter-spacing: normal;
+  font-family: "Clash Grotesk", Arial, Helvetica, sans-serif;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1px solid rgba(255, 246, 0, 0.7);
+  border-radius: 2px;
+  background: #000000;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #daf822;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12px 12px;
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: none;
+  border-color: #daf822;
+}
+
+input[type="range"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 16px;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 2px;
+  background: rgba(255, 246, 0, 0.4);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  margin-top: -6px;
+  border-radius: 999px;
+  background: #daf822;
+  border: 2px solid #000000;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="date"],
+input[type="time"],
+input[type="number"] {
+  color-scheme: dark;
+  font-family: "Menlo", "Consolas", monospace;
+}
+
+input[type="date"].font-ocr,
+input[type="time"].font-ocr,
+input[type="number"].font-ocr {
+  font-family: "OCR", "Menlo", "Consolas", monospace;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(89%) sepia(96%) saturate(2000%) hue-rotate(5deg) brightness(105%);
+  cursor: pointer;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="color"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 1px solid rgba(255, 246, 0, 0.5);
+  border-radius: 2px;
+  background: #000000;
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 2px;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 1px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.font-display,
+.font-tanker {
+  font-family: "Tanker", "Courier New", monospace;
+}
+
+.font-ocr {
+  font-family: "OCR", "Menlo", "Consolas", monospace;
+}
+
+.font-kalmansk {
+  font-family: "Kalmansk", "Clash Grotesk", Arial, sans-serif;
+}
+
+.font-clash {
+  font-family: "Clash Display", "Clash Grotesk", Arial, sans-serif;
+}
+
+.font-grotesk {
+  font-family: "Clash Grotesk", Arial, Helvetica, sans-serif;
+}
+
+.font-stardom {
+  font-family: "Stardom", "Clash Display", serif;
+}
+
+.screen-text {
+  color: #daf822;
+  text-shadow: 0.07em 0.07em 0 #0937a5;
+}
+
+.title-shadow {
+  text-shadow: 4px 0 4px rgba(0, 159, 223, 0.5);
+}
+
+.scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #daf822 #06060a;
+}
+
+.scroll-thin::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.scroll-thin::-webkit-scrollbar-track {
+  background: #06060a;
+}
+
+.scroll-thin::-webkit-scrollbar-thumb {
+  background: #daf822;
+  border-radius: 0;
+}
+
+@keyframes pulse-live {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.pulse-live {
+  animation: pulse-live 1.6s ease-in-out infinite;
+}

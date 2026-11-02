@@ -1,0 +1,33 @@
+[
+  {
+    "id": "krea2-image",
+    "title": "Krea 2 image to image, faces kept",
+    "kind": "image",
+    "file": "krea2-image.json",
+    "summary": "Repaints the init image with Krea 2 Turbo at 2 MP in 8 steps, then ReActor puts the original faces back. Needs an init image on the slot.",
+    "nodes": [
+      { "name": "ComfyUI-ReActor", "url": "https://github.com/Gourieff/ComfyUI-ReActor", "classes": ["ReActorFaceSwap"] }
+    ],
+    "models": [
+      { "file": "krea2_turbo_int8_convrot.safetensors", "folder": "diffusion_models", "bytes": 13492686496, "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_int8_convrot.safetensors" },
+      { "file": "qwen3vl_4b_int8_convrot.safetensors", "folder": "text_encoders", "bytes": 4858559240, "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_int8_convrot.safetensors" },
+      { "file": "qwen_image_vae.safetensors", "folder": "vae", "bytes": 253806246, "url": "https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors" },
+      { "file": "inswapper_128.onnx", "folder": "insightface", "bytes": 554253681, "url": "https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/inswapper_128.onnx" },
+      { "file": "codeformer-v0.1.0.pth", "folder": "facerestore_models", "bytes": 376637898, "url": "https://huggingface.co/datasets/Gourieff/ReActor/resolve/main/models/facerestore_models/codeformer-v0.1.0.pth" }
+    ]
+  },
+  {
+    "id": "fasth3-loop",
+    "title": "FastH3 OmniRef loop from the poster",
+    "kind": "video",
+    "file": "fasth3-loop.json",
+    "summary": "Animates the slot's poster into a 24 fps clip with sound using MiniMax H3 FastH3 OmniRef in 8 steps. Width, height and length follow the slot.",
+    "nodes": [],
+    "models": [
+      { "file": "fasth3_omniref_8step_pruned_int8_convrot.safetensors", "folder": "diffusion_models", "bytes": 22213723064, "url": "https://huggingface.co/FastVideo/FastH3-Omni-Comfy/resolve/main/diffusion_models/fasth3_omniref_8step_pruned_int8_convrot.safetensors" },
+      { "file": "qwen3vl_32b_minimax_h3_int8_convrot.safetensors", "folder": "text_encoders", "bytes": 27141342152, "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/text_encoders/qwen3vl_32b_minimax_h3_int8_convrot.safetensors" },
+      { "file": "minimax_h3_video_vae_int8_convrot.safetensors", "folder": "vae", "bytes": 2811065184, "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_video_vae_int8_convrot.safetensors" },
+      { "file": "minimax_h3_audio_vae_fp32.safetensors", "folder": "vae", "bytes": 605254808, "url": "https://huggingface.co/Comfy-Org/MiniMax-H3/resolve/main/vae/minimax_h3_audio_vae_fp32.safetensors" }
+    ]
+  }
+]
