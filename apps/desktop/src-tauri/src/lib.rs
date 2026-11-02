@@ -437,6 +437,7 @@ pub fn run() {
     tauri::Builder::default()
         .plugin(tauri_plugin_dialog::init())
         .setup(|app| {
+            let _ = &app;
             #[cfg(target_os = "macos")]
             if let Some(window) = app.get_webview_window("main") {
                 let _ = window.with_webview(|webview| unsafe {
